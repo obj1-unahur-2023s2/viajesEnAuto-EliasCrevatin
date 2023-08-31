@@ -1,0 +1,56 @@
+import remiseras.*
+import clientes.*
+describe"test de roxana"{
+	
+	test "precio igual a $180 de viaje por llevar a ludmia 10 km " {
+	assert.equals(180, roxana.cobrar(ludmila, 10))
+    }
+     
+	test "precio igual a $300 de viaje por llevar a anaMaria 10 km " {
+	assert.equals(300, roxana.cobrar(anaMaria, 10))
+    }
+    
+    test "precio igual a $220 de viaje por llevar a teresa 10 km" {
+	assert.equals(220, roxana.cobrar(teresa, 10))
+    }
+}
+
+describe "test de Gabriela"{
+	test "precio igual a $216 de viaje por llevar a Ludmila 10 km "{
+		assert.equals(216, gabriela.cobrar(ludmila, 10))
+	}
+	
+	test "precio igual a $360 de viaje por llevar a Ludmila 10 km "{
+		assert.equals(360, gabriela.cobrar(anaMaria, 10))
+	}
+	test "precio igual a $360 de viaje por llevar a teresa 10 km "{
+		assert.equals(360, gabriela.cobrar(teresa, 10))
+	}
+}
+
+describe "test de Mariela"{
+	test "precio igual a $50 de viaje por llevar a Ludmila 3 km "{
+		assert.equals(50, mariela.cobrar(ludmila, 3))
+	}
+	
+	test "precio igual a $50 de viaje por llevar a Ludmila 4 km "{
+		assert.equals(50, mariela.cobrar(anaMaria, 4))
+	}
+	test "precio igual a $176 de viaje por llevar a teresa 8 km "{
+		assert.equals(176, mariela.cobrar(teresa, 10))
+	}
+}
+
+describe "test de lucia"{
+	test "no se puede remplazar a si misma"{
+		assert.trowsExceptionWithMessage(
+			"no se puede remplazar a si misma", {lucia.estaReemplazando(lucia)}
+		)
+	}
+		test "reemplazo de roxana"{
+		assert.doesNotThrowException(
+			{lucia.estaReemplazando(roxana)}
+		)
+	}
+	
+}
